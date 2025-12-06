@@ -1,5 +1,5 @@
 with transactions as (
-    select * from {{ ref('stg_transactions') }}
+    select * from "medallion"."main"."stg_transactions"
 ),
 
 customer_stats as (

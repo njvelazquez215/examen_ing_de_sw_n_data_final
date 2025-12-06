@@ -1,5 +1,14 @@
-with transactions as (
-    select * from {{ ref('stg_transactions') }}
+
+  
+    
+    
+
+    create  table
+      "medallion"."main"."fct_customer_transactions__dbt_tmp"
+  
+    as (
+      with transactions as (
+    select * from "medallion"."main"."stg_transactions"
 ),
 
 customer_stats as (
@@ -23,3 +32,6 @@ customer_stats as (
 )
 
 select * from customer_stats
+    );
+  
+  
